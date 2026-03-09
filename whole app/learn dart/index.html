@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dart Foundations — Interactive Learning</title>
+    <meta name="description"
+        content="Learn Programming Foundations and Dart from scratch — interactive, bilingual, and structured for Flutter preparation." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="logo.png?v=1" />
+</head>
+
+<body class="dark-mode">
+    <a href="../../index.html"
+        style="position: fixed; top: 20px; right: 20px; z-index: 9999; background: rgba(2, 185, 235, 0.9); color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+        <span>←</span> Back to Code Now
+    </a>
+
+    <!-- ===================== INTRO PAGE ===================== -->
+    <div id="intro-page" class="intro-page">
+        <div class="intro-bg">
+            <div class="intro-orb orb1"></div>
+            <div class="intro-orb orb2"></div>
+            <div class="intro-orb orb3"></div>
+            <div class="grid-overlay"></div>
+        </div>
+
+        <nav class="intro-nav">
+            <div class="intro-logo">
+                <img src="logo.png?v=1" alt="Dart Learn" class="brand-logo-img" />
+            </div>
+            <button class="skip-intro-btn" onclick="skipIntro()">Skip Intro ➔</button>
+        </nav>
+
+        <div class="intro-sections">
+
+            <!-- Hero Section -->
+            <section class="intro-section is-hero" data-reveal>
+                <div class="hero-badge">🎓 Programming + Dart Fundamentals</div>
+                <h1 class="hero-title">
+                    Master the<br />
+                    <span class="gradient-text">Foundation</span><br />
+                    Before Flutter
+                </h1>
+                <p class="hero-subtitle">
+                    A complete interactive course that teaches you everything you need — programming logic, Dart
+                    language, OOP, null safety and async thinking — before you write a single line of Flutter code.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat"><span class="stat-num">12</span><span class="stat-label">Phases</span></div>
+                    <div class="stat-divider"></div>
+                    <div class="stat"><span class="stat-num">60+</span><span class="stat-label">Lessons</span></div>
+                    <div class="stat-divider"></div>
+                    <div class="stat"><span class="stat-num">AR/EN</span><span class="stat-label">Bilingual</span></div>
+                </div>
+            </section>
+
+            <!-- Section 1: What is Programming -->
+            <section class="intro-section" data-reveal>
+                <div class="intro-card card-glow">
+                    <div class="intro-icon">💻</div>
+                    <h2>What is Programming?</h2>
+                    <p>Programming is the art of giving precise, step-by-step instructions to a computer to solve
+                        problems. Just as you give directions to a friend, you give instructions to a machine — but the
+                        machine needs perfect clarity and logic.</p>
+                    <p class="arabic-text">البرمجة هي فن إعطاء تعليمات دقيقة للحاسوب لحل المشكلات. كما تعطي توجيهات
+                        لصديق، تعطيها للآلة — لكن الآلة تحتاج إلى وضوح ومنطق تام.</p>
+                </div>
+            </section>
+
+            <!-- Section 2: What is a Programming Language -->
+            <section class="intro-section" data-reveal>
+                <div class="intro-card card-glow">
+                    <div class="intro-icon">🔤</div>
+                    <h2>What is a Programming Language?</h2>
+                    <p>A programming language is a formal vocabulary and grammar that lets you communicate with a
+                        computer. Just like Arabic or English has rules, programming languages like Dart, Python, and
+                        JavaScript have syntax rules your code must follow.</p>
+                    <p class="arabic-text">لغة البرمجة هي مفردات وقواعد تتيح لك التواصل مع الحاسوب. مثلما للعربية أو
+                        الإنجليزية قواعد، للغات مثل Dart وPython وJavaScript قواعد صياغة يجب الالتزام بها.</p>
+                </div>
+            </section>
+
+            <!-- Section 3: The Ladder -->
+            <section class="intro-section" data-reveal>
+                <h2 class="section-center-title">The Developer's Ladder</h2>
+                <div class="ladder-container">
+                    <div class="ladder-step step-logic" data-reveal-delay="0">
+                        <div class="step-icon">🧠</div>
+                        <div class="step-content">
+                            <h3>Programming Logic</h3>
+                            <p>How to think algorithmically, break problems, write pseudocode</p>
+                            <p class="arabic-text">كيف تفكر منطقياً، تحلل المشكلات، تكتب خوارزميات</p>
+                        </div>
+                        <div class="step-badge">Foundation</div>
+                    </div>
+                    <div class="ladder-arrow">↓</div>
+                    <div class="ladder-step step-lang" data-reveal-delay="200">
+                        <div class="step-icon">
+                            <img src="logo.png?v=1" alt="Dart" class="step-logo-img" />
+                        </div>
+                        <div class="step-content">
+                            <h3>Language (Dart)</h3>
+                            <p>The tools and vocabulary to express your logic in code</p>
+                            <p class="arabic-text">الأدوات والمفردات للتعبير عن منطقك بالكود</p>
+                        </div>
+                        <div class="step-badge">This Course</div>
+                    </div>
+                    <div class="ladder-arrow">↓</div>
+                    <div class="ladder-step step-framework locked-step" data-reveal-delay="400">
+                        <div class="step-icon">📱</div>
+                        <div class="step-content">
+                            <h3>Framework (Flutter)</h3>
+                            <p>A library of pre-built components for building apps — requires Dart mastery first</p>
+                            <p class="arabic-text">مكتبة مكوّنات جاهزة لبناء التطبيقات — تتطلب إتقان Dart أولاً</p>
+                        </div>
+                        <div class="step-badge">After This Course 🔒</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Why Dart -->
+            <section class="intro-section" data-reveal>
+                <div class="intro-card card-glow">
+                    <div class="intro-icon">
+                        <img src="logo.png?v=1" alt="Dart Logo" class="card-logo-img" />
+                    </div>
+                    <h2>Why Learn Dart Before Flutter?</h2>
+                    <p>Flutter is built entirely in Dart. If you jump into Flutter without understanding Dart, you'll be
+                        fighting two battles at once — learning a language AND a framework simultaneously. Every Flutter
+                        concept (widgets, state, async) is 100% Dart. Mastering Dart first makes Flutter feel natural.
+                    </p>
+                    <p class="arabic-text">Flutter مبني بالكامل على Dart. إذا بدأت Flutter دون فهم Dart، فأنت تخوض
+                        معركتين في آنٍ واحد. كل مفهوم في Flutter — الـwidgets والـstate والـasync — هو Dart خالص. إتقان
+                        Dart يجعل Flutter أمراً طبيعياً.</p>
+                    <div class="why-grid">
+                        <div class="why-item">✅ Dart compiles to native code</div>
+                        <div class="why-item">✅ Strong type system</div>
+                        <div class="why-item">✅ Built-in null safety</div>
+                        <div class="why-item">✅ Async/await patterns</div>
+                        <div class="why-item">✅ OOP principles</div>
+                        <div class="why-item">✅ Google-backed language</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="intro-section is-cta" data-reveal>
+                <div class="cta-container">
+                    <div class="cta-glow"></div>
+                    <h2 class="cta-title">Ready to Start?</h2>
+                    <p class="cta-sub">12 phases. 60+ lessons. Bilingual (EN/AR). Interactive quizzes. XP system.</p>
+                    <button id="start-btn" class="start-btn">
+                        <span class="btn-icon">🚀</span>
+                        Start Programming Foundations
+                        <span class="btn-arrow">→</span>
+                    </button>
+                    <p class="cta-note">Your progress is saved automatically in your browser</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- ===================== MAIN APP ===================== -->
+    <div id="main-app" class="main-app hidden">
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="logo.png?v=1" alt="Dart Learn" class="sidebar-logo-img" />
+                </div>
+                <!-- Sidebar Search -->
+                <div class="sidebar-search">
+                    <input type="text" id="lesson-search" placeholder="Search lessons..." spellcheck="false" />
+                    <span class="search-icon">🔍</span>
+                </div>
+                <button id="sidebar-toggle" class="sidebar-toggle" title="Toggle Sidebar">☰</button>
+            </div>
+
+            <!-- Global Progress -->
+            <div class="global-progress-wrap">
+                <div class="global-progress-header">
+                    <span>Overall Progress</span>
+                    <span id="global-progress-pct">0%</span>
+                </div>
+                <div class="global-progress-bar">
+                    <div id="global-progress-fill" class="global-progress-fill"></div>
+                </div>
+                <div class="xp-display">
+                    <span>⭐ XP: <span id="xp-count">0</span></span>
+                    <span id="badge-display"></span>
+                </div>
+            </div>
+
+            <!-- Phase Nav -->
+            <nav id="lesson-nav" class="lesson-nav"></nav>
+
+            <!-- Settings -->
+            <div class="sidebar-footer">
+                <div class="theme-section">
+                    <p class="theme-label">🎨 Theme</p>
+                    <div id="theme-picker" class="theme-picker"></div>
+                </div>
+                <div class="reading-mode-row">
+                    <label class="toggle-label">
+                        <input type="checkbox" id="reading-mode-toggle" />
+                        <span class="toggle-slider"></span>
+                        <span>Reading Mode</span>
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <main id="content-area" class="content-area">
+            <!-- Topbar -->
+            <header class="topbar">
+                <button id="topbar-sidebar-toggle" class="topbar-btn" title="Toggle Sidebar">☰</button>
+                <div class="topbar-center">
+                    <img src="logo.png?v=1" alt="Logo" class="topbar-logo-img" />
+                    <span id="current-phase-label" class="phase-label"></span>
+                    <span id="current-lesson-title" class="lesson-title-topbar"></span>
+                </div>
+                <div class="topbar-right">
+                    <div class="lang-toggle" id="lang-toggle">
+                        <button class="lang-btn active" data-lang="both">EN+AR</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="ar">AR</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Lesson Viewport -->
+            <div id="lesson-viewport" class="lesson-viewport">
+                <!-- Dynamically injected -->
+            </div>
+        </main>
+    </div>
+
+    <!-- XP Level Up Toast -->
+    <div id="toast" class="toast hidden"></div>
+
+    <!-- Scripts -->
+    <script src="lessons-p1.js"></script>
+    <script src="lessons-p2.js"></script>
+    <script src="lessons-p3.js"></script>
+    <script src="lessons-p4.js"></script>
+    <script src="lessons-p5.js"></script>
+    <script src="lessons-p6.js"></script>
+    <script src="lessons-p7.js"></script>
+    <script src="lessons-p8.js"></script>
+    <script src="lessons-p9.js"></script>
+    <script src="lessons-p9b.js"></script>
+    <script src="lessons-p10.js"></script>
+    <script src="lessons-p11.js"></script>
+    <script src="lessons-p11b.js"></script>
+    <script src="lessons-p12.js"></script>
+    <script src="lessons-p13.js"></script>
+    <script src="lessons-p14.js"></script>
+    <script src="projects-data.js"></script>
+    <script src="lessons-data.js"></script>
+    <script src="quiz.js"></script>
+    <script src="app.js"></script>
+    <script src="intro.js"></script>
+</body>
+
+</html>

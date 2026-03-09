@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures Masterclass (C++)</title>
+    <meta name="description"
+        content="Master Data Structures & Algorithms in C++ — from memory fundamentals to interview-ready expertise. Interactive lessons, quizzes, and coding challenges.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236366f1'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='monospace' font-weight='800' font-size='50' fill='white'%3E%7B %7D%3C/text%3E%3C/svg%3E">
+</head>
+
+<body class="dark-mode">
+    <a href="../../index.html"
+        style="position: fixed; top: 20px; right: 20px; z-index: 9999; background: rgba(59, 130, 246, 0.9); color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+        <span>←</span> Back to Code Now
+    </a>
+    <!-- ─── Intro Screen ─── -->
+    <div id="intro-screen" class="active">
+        <div class="intro-content">
+            <div class="app-logo main-logo">
+                <div class="logo-inner">
+                    <div class="logo-nodes"></div>
+                </div>
+            </div>
+            <h1 class="fade-in-title">Data Structures &amp; Algorithms</h1>
+            <h2 class="slide-up-subtitle">The Engineering First Principles · C++</h2>
+
+            <div id="intro-slides">
+                <!-- Slide 1 -->
+                <section class="intro-step visible">
+                    <div class="icon-wrapper">🧠</div>
+                    <h3>Why Data Structures?</h3>
+                    <p>Before you write algorithms, you must understand how data is organized in memory. Data structures
+                        are the core foundation of every fast, scalable system.</p>
+                </section>
+
+                <!-- Slide 2 -->
+                <section class="intro-step">
+                    <div class="icon-wrapper">⚙️</div>
+                    <h3>Algorithms vs Data Structures</h3>
+                    <p><strong>Algorithms</strong> are the logic (the actions). <strong>Data Structures</strong> are the
+                        organization (the tools). A brilliant algorithm is useless with the wrong tools.</p>
+                </section>
+
+                <!-- Slide 3 -->
+                <section class="intro-step">
+                    <div class="icon-wrapper">📈</div>
+                    <h3>Why Big-O Matters</h3>
+                    <p>Big-O predicts how your code survives when inputs scale to millions of users. It separates junior
+                        coders from senior engineers — and it's asked in every top-tier interview.</p>
+                </section>
+
+                <!-- Slide 4 -->
+                <section class="intro-step">
+                    <div class="icon-wrapper">🚀</div>
+                    <h3>The Journey Ahead</h3>
+                    <p>We will build arrays, lists, stacks, trees, heaps, and graphs <strong>from scratch</strong> using
+                        C++ pointers before we ever touch a built-in library.</p>
+                </section>
+            </div>
+
+            <!-- Intro Navigation -->
+            <div class="intro-controls">
+                <button id="skip-intro-btn" class="secondary-btn">Skip Intro ⏭</button>
+                <button id="start-course-btn" class="primary-btn hidden">🚀 Enter Masterclass</button>
+            </div>
+
+            <div class="intro-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── App Container ─── -->
+    <div id="app-container" class="hidden">
+
+        <!-- ─── Sidebar ─── -->
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <div class="app-logo sidebar-logo">
+                    <div class="logo-inner">
+                        <div class="logo-nodes"></div>
+                    </div>
+                </div>
+                <h2>C++ DS</h2>
+                <button id="toggle-sidebar" title="Collapse Sidebar">☰</button>
+            </div>
+
+            <div class="sidebar-controls">
+                <div class="translation-toggle">
+                    <label>Lang:</label>
+                    <select id="lang-select">
+                        <option value="en">English</option>
+                        <option value="ar">Arabic</option>
+                        <option value="both" selected>Both</option>
+                    </select>
+                </div>
+                <div class="xp-display"><span id="xp-count">0</span> XP</div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-header">
+                    <span class="progress-label">Progress</span>
+                    <span id="progress-text">0% Completed</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <nav id="lesson-nav">
+                <!-- Dynamically generated navigation items -->
+            </nav>
+        </aside>
+
+        <!-- ─── Main Content ─── -->
+        <main id="main-content">
+            <!-- Scrollable content wrapper — fills all available height -->
+            <div class="content-scroll-wrapper">
+                <article id="lesson-container">
+                    <!-- Dynamically populated lesson content -->
+                </article>
+
+                <div id="practice-section" class="hidden">
+                    <h3>🧪 Practice System <span class="practice-badge">Quiz</span></h3>
+                    <div id="practice-content"></div>
+                </div>
+
+                <!-- Complete-lesson bar — now at end of scrollable content -->
+                <div id="complete-bar" class="complete-bar hidden">
+                    <span id="complete-bar-msg" style="color: var(--text-secondary); font-size: 0.875rem;"></span>
+                    <button id="complete-lesson-btn" class="primary-btn" disabled>Complete Lesson ✓</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ─── Code Playground Modal ─── -->
+    <div id="code-playground-modal" class="hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Console Playground</h3>
+                <span class="close-btn" title="Close">&times;</span>
+            </div>
+            <pre
+                style="background: #060611; border-radius: 10px; padding: 1.25rem; overflow-x: auto; border: 1px solid rgba(99,102,241,0.15);"><code id="playground-code" style="font-family:'JetBrains Mono',monospace; font-size:0.85rem; color:#cbd5e1; line-height:1.7;"></code></pre>
+            <div style="margin-top: 1rem; display: flex; gap: 0.75rem; align-items: center;">
+                <button id="run-code-btn" class="primary-btn" style="padding: 10px 24px; font-size: 0.9rem;">▶ Run
+                    Code</button>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Simulated C++ execution environment</span>
+            </div>
+            <div id="console-output"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

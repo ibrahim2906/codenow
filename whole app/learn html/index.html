@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn HTML from scratch with interactive lessons following Elzero Web School curriculum. Bilingual English/Arabic support.">
+    <title>Learn HTML - Interactive Course</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <script>
+        // Redirect first-time users to intro page
+        if (!localStorage.getItem('htmlCourse_seenIntro')) {
+            window.location.href = 'intro.html';
+        }
+    </script>
+</head>
+
+<body>
+    <a href="../../index.html"
+        style="position: fixed; top: 20px; right: 20px; z-index: 9999; background: rgba(255, 107, 107, 0.9); color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+        <span>←</span> Back to Code Now
+    </a>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="logo.png" alt="Learn HTML Logo" class="sidebar-logo">
+            <h1>Learn HTML</h1>
+            <p>Interactive Course</p>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">0 / 0 Lessons</div>
+        </div>
+        <div class="sidebar-controls">
+            <select class="theme-select" id="themeSelect" aria-label="Color theme">
+                <option value="default">🎨 Default Blue</option>
+                <option value="ocean">🌊 Ocean</option>
+                <option value="forest">🌲 Forest</option>
+                <option value="sunset">🌅 Sunset</option>
+                <option value="lavender">💜 Lavender</option>
+                <option value="rose">🌹 Rose</option>
+                <option value="mint">🌿 Mint</option>
+                <option value="amber">🍯 Amber</option>
+                <option value="sky">☁️ Sky</option>
+                <option value="coral">🐚 Coral</option>
+            </select>
+            <select class="lang-select" id="langSelect" aria-label="Language mode">
+                <option value="both">🌐 EN + AR</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="ar">🇸🇦 Arabic</option>
+            </select>
+        </div>
+        <div class="lesson-list" id="lessonList">
+            <!-- Lessons populated by JS -->
+        </div>
+    </nav>
+
+    <!-- Sidebar Toggle -->
+    <button class="sidebar-toggle" aria-label="Toggle sidebar">
+        <span>☰</span>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="lesson-content" id="lessonContent">
+            <!-- Loading State -->
+            <div class="loading">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="lessons-part1.js"></script>
+    <script src="lessons-part2.js"></script>
+    <script src="lessons-part3.js"></script>
+    <script src="lessons-part4.js"></script>
+    <script src="projects.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
