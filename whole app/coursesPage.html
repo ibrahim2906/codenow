@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Now - Programming Courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #030305;
+            --card-bg: rgba(17, 17, 20, 0.6);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent-primary: #3b82f6;
+            --accent-secondary: #a855f7;
+            --accent-glow: rgba(59, 130, 246, 0.5);
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Background Animations --- */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: #030305;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: floatOrb 20s infinite alternate ease-in-out;
+        }
+
+        .orb-1 {
+            top: -10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            bottom: -20%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+            animation-delay: -5s;
+        }
+
+        @keyframes floatOrb {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(50px, 50px) scale(1.1);
+            }
+        }
+
+        /* --- Navigation & Logo --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(3, 3, 5, 0.5);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transform: translateY(-100%);
+            animation: slideDown 0.8s forwards 0.5s;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-svg {
+            width: 36px;
+            height: 36px;
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+            padding-top: 5rem;
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards 0.8s;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards 1s;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-accent {
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary), #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradientMove 5s linear infinite;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards 1.2s;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards 2s;
+        }
+
+        .mouse {
+            width: 24px;
+            height: 36px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .wheel {
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollWheel 1.5s infinite;
+        }
+
+        /* --- Grid Section --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 8rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section-title.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            /* Scroll Animation Defaults */
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .course-card.show {
+            animation: cardReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Stagger logic via CSS nth-child since JS adds 'show' simultaneously if in view */
+        .course-card:nth-child(1).show {
+            animation-delay: 0.1s;
+        }
+
+        .course-card:nth-child(2).show {
+            animation-delay: 0.2s;
+        }
+
+        .course-card:nth-child(3).show {
+            animation-delay: 0.3s;
+        }
+
+        .course-card:nth-child(4).show {
+            animation-delay: 0.4s;
+        }
+
+        .course-card:nth-child(5).show {
+            animation-delay: 0.5s;
+        }
+
+        .course-card:nth-child(6).show {
+            animation-delay: 0.6s;
+        }
+
+        /* The glowing mouse effect */
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(800px circle at var(--x) var(--y), rgba(255, 255, 255, 0.08), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.5s;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(59, 130, 246, 0.1);
+        }
+
+        .course-card:hover::before {
+            opacity: 1;
+        }
+
+        .course-content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .icon-wrapper {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .course-card:hover .icon-wrapper {
+            transform: scale(1.1) rotate(-5deg);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .course-card h3 {
+            font-size: 1.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #fff;
+            transition: var(--transition);
+        }
+
+        .course-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .btn-start {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--accent-primary);
+            transition: var(--transition);
+            margin-top: auto;
+        }
+
+        .btn-start svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover .btn-start {
+            color: #fff;
+        }
+
+        .course-card:hover .btn-start svg {
+            transform: translateX(6px);
+            stroke: var(--accent-secondary);
+        }
+
+        /* --- Footer --- */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 4rem 2rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .footer-logo:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* --- Keyframes --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scrollWheel {
+            0% {
+                transform: translate(-50%, 0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, 15px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes cardReveal {
+            from {
+                opacity: 0;
+                transform: translateY(60px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.4));
+            }
+
+            100% {
+                filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.8));
+            }
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+            }
+
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animated Ambient Background -->
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo-container">
+            <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#3b82f6" />
+                        <stop offset="100%" stop-color="#a855f7" />
+                    </linearGradient>
+                </defs>
+                <path d="M40 25 L15 50 L40 75" stroke="url(#logo-grad)" stroke-width="12" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M60 25 L85 50 L60 75" stroke="url(#logo-grad)" stroke-width="12" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M55 15 L45 85" stroke="white" stroke-width="8" stroke-linecap="round" />
+            </svg>
+            Code Now
+        </a>
+
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">✨ Level up your skills today</div>
+        <h1>
+            <span class="text-gradient">Master the Future of</span><br>
+            <span class="text-gradient-accent">Programming</span>
+        </h1>
+        <p>Interactive, high-quality courses designed to take you from beginner to professional developer. Start
+            building real-world applications today.</p>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            Scroll to explore
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <main class="container" id="courses">
+        <h2 class="section-title scroll-animate">Explore Our Paths</h2>
+
+        <div class="course-grid">
+            <!-- Data Structure -->
+            <a href="whole app/Data Structure/index.html" class="course-card scroll-animate">
+                <div class="course-content">
+                    <div class="icon-wrapper">🧩</div>
+                    <h3>Data Structures</h3>
+                    <p>Learn fundamental to advanced data structures from scratch to optimize your code.</p>
+                    <div class="btn-start">
+                        Start Learning
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- C++ -->
+            <a href="whole app/c++/index.html" class="course-card scroll-animate">
+                <div class="course-content">
+                    <div class="icon-wrapper">⚙️</div>
+                    <h3>C++</h3>
+                    <p>Master the power of C++ from basics to professional level memory management.</p>
+                    <div class="btn-start">
+                        Start Learning
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Dart -->
+            <a href="whole app/learn dart/index.html" class="course-card scroll-animate">
+                <div class="course-content">
+                    <div class="icon-wrapper">🎯</div>
+                    <h3>Dart</h3>
+                    <p>Build beautiful natively compiled, cross-platform apps with Dart programming.</p>
+                    <div class="btn-start">
+                        Start Learning
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- HTML -->
+            <a href="whole app/learn html/index.html" class="course-card scroll-animate">
+                <div class="course-content">
+                    <div class="icon-wrapper">🌐</div>
+                    <h3>HTML</h3>
+                    <p>Master the semantic foundation of the web and build accessible interfaces.</p>
+                    <div class="btn-start">
+                        Start Learning
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- OOP -->
+            <a href="whole app/oop بشكل تفاعلي.html" class="course-card scroll-animate">
+                <div class="course-content">
+                    <div class="icon-wrapper">🏗️</div>
+                    <h3>OOP</h3>
+                    <p>Understand Object-Oriented Programming paradigms interactively and visually.</p>
+                    <div class="btn-start">
+                        Start Learning
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Programming Terms -->
+            <a href="whole app/مصطلحات البرمجة.html" class="course-card scroll-animate">
+                <div class="course-content">
+                    <div class="icon-wrapper">📖</div>
+                    <h3>Coding Concepts</h3>
+                    <p>Learn the essential terminology and concepts every programmer must know.</p>
+                    <div class="btn-start">
+                        Start Learning
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Databases -->
+            <a href="whole app/Databases/index.html" class="course-card scroll-animate">
+                <div class="course-content">
+                    <div class="icon-wrapper">🗃️</div>
+                    <h3>Database Fundamentals</h3>
+                    <p>Master databases with C++ — from SQL basics and ER modeling to building your own mini DB engine.
+                    </p>
+                    <div class="btn-start">
+                        Start Learning
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 25 L15 50 L40 75" stroke="currentColor" stroke-width="12" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M60 25 L85 50 L60 75" stroke="currentColor" stroke-width="12" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M55 15 L45 85" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+                </svg>
+                Code Now
+            </div>
+            <p class="copyright">&copy; 2026 Code Now Education. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Mouse Tracking Glow Effect on Cards
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
+
+        // 2. Intersection Observer for Scroll Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15 // Triggers when 15% of the element is visible
+        };
+
+        const scrollObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add the 'show' class to trigger CSS animation
+                    entry.target.classList.add('show');
+                    // Stop observing once animated
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with the .scroll-animate class
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            scrollObserver.observe(el);
+        });
+    </script>
+</body>
+
+</html>
