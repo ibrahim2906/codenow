@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Interactive CSS Course - Learn CSS step by step following the Elzero Web School curriculum with live previews, exercises, quizzes, and playgrounds.">
+  <title>CSS Course</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ===== INTRO OVERLAY ===== -->
+  <div class="intro-overlay" id="intro-overlay">
+    <img src="assets/images/banner.png" alt="Course Banner" class="intro-bg-image" />
+    <button class="btn btn-skip" id="skip-intro-btn">⏭ Skip Intro</button>
+    <div class="intro-content modern-intro">
+      <div class="intro-text">
+        <h1 class="intro-title glitch" data-text="Learn CSS">Learn CSS</h1>
+        <p class="intro-subtitle type-effect">Master CSS from zero to hero with interactive lessons, live playgrounds, and hands-on practice.</p>
+      </div>
+      <div class="intro-cards modern-cards">
+        <div class="intro-card hover-float">
+          <span class="card-icon pulse-glow">🏗️</span>
+          <h3>HTML</h3>
+          <p>Structure — The skeleton</p>
+        </div>
+        <div class="intro-card hover-float" style="animation-delay: 0.1s">
+          <span class="card-icon pulse-glow">🎨</span>
+          <h3>CSS</h3>
+          <p>Style — Colors, animations</p>
+        </div>
+        <div class="intro-card hover-float" style="animation-delay: 0.2s">
+          <span class="card-icon pulse-glow">⚡</span>
+          <h3>JS</h3>
+          <p>Behavior — Interactivity</p>
+        </div>
+      </div>
+      <div class="intro-start-btn" style="margin-top: 2.5rem; animation: fadeInUp 1s ease 1s both;">
+        <button class="btn btn-start modern-btn glowing-btn" id="start-course-btn">🚀 Start Course</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MOBILE OVERLAY ===== -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="app-header">
+    <div style="display:flex;align-items:center;gap:12px">
+      <button class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle sidebar"
+        title="Toggle sidebar">☰</button>
+      <div class="logo">
+        <span>🎨</span>
+        <span class="logo-text">CSS Course</span>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-settings">
+      <div class="language-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+        <button class="lang-btn" data-lang="both">Both</button>
+      </div>
+      <div class="theme-picker" id="theme-picker">
+        <button class="theme-btn" data-theme="blue" style="--btn-color: #3b82f6;" title="Blue"></button>
+        <button class="theme-btn" data-theme="purple" style="--btn-color: #a855f7;" title="Purple"></button>
+        <button class="theme-btn" data-theme="pink" style="--btn-color: #ec4899;" title="Pink"></button>
+        <button class="theme-btn" data-theme="red" style="--btn-color: #ef4444;" title="Red"></button>
+        <button class="theme-btn" data-theme="orange" style="--btn-color: #f97316;" title="Orange"></button>
+        <button class="theme-btn" data-theme="yellow" style="--btn-color: #eab308;" title="Yellow"></button>
+        <button class="theme-btn" data-theme="green" style="--btn-color: #22c55e;" title="Green"></button>
+        <button class="theme-btn" data-theme="teal" style="--btn-color: #14b8a6;" title="Teal"></button>
+        <button class="theme-btn" data-theme="cyan" style="--btn-color: #06b6d4;" title="Cyan"></button>
+        <button class="theme-btn" data-theme="indigo" style="--btn-color: #6366f1;" title="Indigo"></button>
+      </div>
+    </div>
+    <div class="sidebar-progress">
+      <div class="progress-label">
+        <span>📊 Progress</span>
+        <span id="progress-label">0/20 (0%)</span>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progress-fill"></div>
+      </div>
+    </div>
+    <div class="sidebar-section-title">📚 Lessons</div>
+    <div class="lesson-list" id="lesson-list"></div>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content" id="main-content">
+    <div class="lesson-container">
+      <div class="lesson-content-wrapper" id="lesson-content">
+        <div style="display:flex;align-items:center;justify-content:center;min-height:300px">
+          <div class="spinner"></div>
+        </div>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="lesson-nav">
+        <button class="btn btn-secondary" id="prev-lesson">← Previous</button>
+        <button class="btn btn-complete" id="complete-lesson">✔ Mark Complete</button>
+        <button class="btn btn-primary" id="next-lesson">Next →</button>
+      </div>
+    </div>
+
+    <!-- ===== CSS PLAYGROUND ===== -->
+    <section id="playground-section" style="margin-top:60px;max-width:920px;margin-left:auto;margin-right:auto;">
+      <h2 class="lesson-title" style="font-size:1.8rem;margin-bottom:8px">🧪 CSS Playground</h2>
+      <p style="color:var(--text-secondary);margin-bottom:20px">Write CSS and see live results. Try different modes
+        below.</p>
+      <div class="tabs" style="margin-bottom:16px">
+        <button class="tab-btn playground-tab active" data-mode="general">General</button>
+        <button class="tab-btn playground-tab" data-mode="boxmodel">Box Model</button>
+        <button class="tab-btn playground-tab" data-mode="flexbox">Flexbox</button>
+        <button class="tab-btn playground-tab" data-mode="grid">Grid</button>
+      </div>
+      <div class="playground-container">
+        <div class="playground-editor">
+          <textarea id="playground-editor" spellcheck="false" placeholder="Write your CSS here..."></textarea>
+        </div>
+        <div class="playground-preview">
+          <iframe id="playground-preview-frame" title="CSS Preview"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="data/lessons-data.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/playground.js"></script>
+  <script src="js/lessons.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

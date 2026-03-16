@@ -1,0 +1,117 @@
+/* ===== Mobile: <= 768px ===== */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 280px;
+    --fs-4xl: 2.2rem;
+    --fs-3xl: 1.8rem;
+    --fs-2xl: 1.5rem;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: 4px 0 20px var(--shadow-color);
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .app-header {
+    padding: 0 var(--space-md);
+  }
+
+  .intro-cards {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .playground-container {
+    grid-template-columns: 1fr;
+  }
+
+  .visualizer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-nav {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .lesson-nav .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header-actions .header-label {
+    display: none;
+  }
+
+  .tabs {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--overlay-bg);
+    z-index: 850;
+  }
+
+  .mobile-overlay.show {
+    display: block;
+  }
+
+  .box-model-viz {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* ===== Tablet: 769px - 1024px ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --sidebar-width: 260px;
+  }
+
+  .main-content {
+    padding: var(--space-xl);
+  }
+
+  .intro-cards {
+    gap: var(--space-md);
+  }
+
+  .playground-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Desktop: > 1024px ===== */
+@media (min-width: 1025px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  .mobile-overlay {
+    display: none !important;
+  }
+}
+
+/* ===== Print ===== */
+@media print {
+  .sidebar, .app-header, .lesson-nav, .intro-overlay {
+    display: none;
+  }
+  .main-content {
+    margin: 0;
+    padding: 20px;
+  }
+}
