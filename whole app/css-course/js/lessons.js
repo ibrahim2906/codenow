@@ -42,8 +42,8 @@ const Lessons = (() => {
       <div class="lesson-section animate-fade-in-up" style="animation-delay:0.1s">
         <div class="lesson-section-title"><span class="icon">📖</span> Explanation</div>
         <div class="card">
-          ${currentLang === 'en' || currentLang === 'both' ? `<p style="line-height:1.8;margin-bottom:${currentLang === 'both' ? '16px' : '0'}">${lesson.explanation}</p>` : ''}
-          ${currentLang === 'ar' || currentLang === 'both' ? `<p class="arabic-text" style="line-height:2;color:var(--text-secondary)">${lesson.explanationAr}</p>` : ''}
+          ${currentLang === 'en' || currentLang === 'both' ? `<p style="white-space:pre-wrap;line-height:1.8;margin-bottom:${currentLang === 'both' ? '16px' : '0'}">${lesson.explanation}</p>` : ''}
+          ${currentLang === 'ar' || currentLang === 'both' ? `<p class="arabic-text" style="white-space:pre-wrap;line-height:2;color:var(--text-secondary)">${lesson.explanationAr}</p>` : ''}
         </div>
       </div>
 
