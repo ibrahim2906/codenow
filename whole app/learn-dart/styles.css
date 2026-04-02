@@ -1536,6 +1536,114 @@ pre {
     display: block;
 }
 
+/* Organized Lesson Content Components */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    background: var(--bg-card-hover);
+}
+
+.feature-card .f-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.feature-card h5 {
+    color: var(--accent-light);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.step-list::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: var(--border-accent);
+}
+
+[data-lang="ar"] .step-list,
+.arabic-text .step-list {
+    padding-left: 0;
+    padding-right: 1.5rem;
+}
+
+[data-lang="ar"] .step-list::before,
+.arabic-text .step-list::before {
+    left: auto;
+    right: 4px;
+}
+
+.step-item {
+    position: relative;
+}
+
+.step-item::after {
+    content: '';
+    position: absolute;
+    left: -1.55rem;
+    top: 0.5rem;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 2px solid var(--bg-primary);
+    z-index: 1;
+}
+
+[data-lang="ar"] .step-item::after,
+.arabic-text .step-item::after {
+    left: auto;
+    right: -1.55rem;
+}
+
+.step-item strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+}
+
+.step-item p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
 /* ============================================================
    QUIZ SECTION
    ============================================================ */

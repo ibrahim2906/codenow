@@ -142,8 +142,8 @@ function renderLessonContent(lesson, phase) {
 
       <section class="content-section">
         <div class="explanation-block">
-          <p class="en-text">${lesson.en}</p>
-          <p class="arabic-text">${lesson.ar}</p>
+          <div class="en-text">${lesson.en}</div>
+          <div class="arabic-text">${lesson.ar}</div>
         </div>
       </section>
 
