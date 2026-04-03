@@ -3,145 +3,108 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>خارطة الطريق — Flutter + Dart</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>المرحلة الأولى — Dart + Programming Logic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Changa:wght@600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-theme="dark">
-  <header>
-    <div class="nav">
+<body class="theme-dark" data-phase="phase-1">
+  <div class="bg">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+    <span class="grid-overlay"></span>
+  </div>
+
+  <header class="hero" id="top">
+    <nav class="topbar">
       <div class="brand">
-        <div class="brand-badge">RD</div>
-        خارطة الطريق لتعلم Flutter & Dart
+        <span class="brand__dot"></span>
+        <span>Roadmap Flutter</span>
       </div>
       <div class="nav-links">
-        <a href="index.html" aria-current="page">الرئيسية</a>
-        <a href="phase-1.html">المرحلة الأولى</a>
-        <a href="phase-2.html">المرحلة الثانية</a>
-        <a href="phase-3.html">المرحلة الثالثة</a>
-        <a href="phase-4.html">المرحلة الرابعة</a>
+        <a href="index.html">المرحلة 1</a>
+        <a href="phase-2.html">المرحلة 2</a>
+        <a href="phase-3.html">المرحلة 3</a>
+        <a href="phase-4.html">المرحلة 4</a>
       </div>
       <div class="nav-actions">
-        <button class="btn" id="themeToggle">الوضع الفاتح</button>
-        <button class="btn secondary" id="resetProgress">تصفير التقدم</button>
+        <button class="ghost" id="toggle-theme" type="button">الوضع الفاتح</button>
+        <button class="ghost" id="toggle-compact" type="button">عرض مركز</button>
+      </div>
+    </nav>
+
+    <div class="hero__content">
+      <div class="badge">المرحلة الأولى — Dart + Programming Logic</div>
+      <h1>المرحلة الأولى: Dart + Logic مع تتبع يومي</h1>
+      <p>
+        تابع خطة Dart خطوة بخطوة مع تايمستامب الفيديو والمهام اليومية. كل إنجاز بيتسجل تلقائيًا.
+      </p>
+
+      <div class="hero__grid">
+        <div class="stat">
+          <span class="stat__label">إجمالي الأيام</span>
+          <span id="total-count" class="stat__value">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">المنجز</span>
+          <span id="done-count" class="stat__value">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">المتبقي</span>
+          <span id="remaining-count" class="stat__value">0</span>
+        </div>
+      </div>
+
+      <div class="progress">
+        <div class="progress__bar" id="overall-progress"></div>
+        <div class="progress__label" id="overall-label">0%</div>
+      </div>
+
+      <div class="hero__actions">
+        <button class="primary" id="expand-all" type="button">فتح كل التفاصيل</button>
+        <button class="secondary" id="collapse-all" type="button">إغلاق التفاصيل</button>
+        <button class="ghost danger" id="reset-progress" type="button">تصفير الإنجاز</button>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section class="hero reveal">
-      <div class="hero-card">
-        <div class="pill">خطة من 0 للاحتراف</div>
-        <h1>امشي يوم بيوم… وهتوصل لمستوى الشركات</h1>
-        <p>الخريطة دي مصممة عشان تخليك تفهم البرمجة بعمق، تبني UI محترف، وتقدر تدخل سوق العمل بثقة. افتح كل مرحلة لوحدها وركز يومًا بيوم.</p>
-        <div class="stats">
-          <div class="stat">
-            <strong id="overallCount">0/0</strong>
-            إجمالي الأيام المكتملة
-          </div>
-          <div class="stat">
-            <strong>4 مراحل</strong>
-            من الصفر للاحتراف
-          </div>
-          <div class="stat">
-            <strong>9 شهور</strong>
-            زمن الوصول للوظيفة
-          </div>
-        </div>
-        <div class="overall-progress">
-          <div class="progress"><span id="overallBar"></span></div>
-          <div class="progress-meta">
-            <span id="overallPercent">0%</span>
-            <span>نسبة الإنجاز الكلية</span>
-          </div>
-        </div>
+    <section class="routine card">
+      <div class="card__head">
+        <h2>النظام اليومي</h2>
+        <p>ثباتك اليومي هو الفرق الحقيقي.</p>
       </div>
-      <div class="hero-card">
-        <h3>النظام اليومي (مهم جدًا)</h3>
-        <p>التزم بالمعادلة دي يوميًا عشان تثبت المعلومة وتطبقها عمليًا.</p>
-        <div class="days" style="margin-top: 16px;">
-          <div class="notice">⏱️ 2–3 ساعات مشاهدة مركزة</div>
-          <div class="notice">⏱️ 3–4 ساعات تطبيق عملي</div>
-          <div class="notice">⏱️ 30 دقيقة مراجعة سريعة</div>
-        </div>
+      <div class="routine__items">
+        <div class="pill">2–3 ساعات: مشاهدة</div>
+        <div class="pill">3–4 ساعات: تطبيق عملي</div>
+        <div class="pill">30 دقيقة: مراجعة</div>
       </div>
     </section>
 
-    <section class="section reveal">
-      <div class="section-title">
-        <h2>المراحل الأربع</h2>
-        <span class="pill">تابع تقدمك من هنا</span>
+    <section class="controls card">
+      <div class="control">
+        <label for="search">ابحث في الأيام</label>
+        <input id="search" type="search" placeholder="اكتب كلمة مثل: Loops, Firebase, UI..." />
       </div>
-      <div class="grid">
-        <article class="card" data-phase="phase-1">
-          <h3>المرحلة الأولى: Dart + Logic</h3>
-          <p>تفهم البرمجة من الصفر وتبني أساس قوي في التفكير البرمجي.</p>
-          <div class="progress"><span></span></div>
-          <div class="progress-meta">
-            <span class="progress-label">0/0</span>
-            <span>تقدم المرحلة</span>
-          </div>
-          <a class="btn" href="phase-1.html">افتح المرحلة</a>
-        </article>
-        <article class="card" data-phase="phase-2">
-          <h3>المرحلة الثانية: Flutter UI</h3>
-          <p>تتعلم بناء واجهات احترافية وربطها بتفاعل حقيقي.</p>
-          <div class="progress"><span></span></div>
-          <div class="progress-meta">
-            <span class="progress-label">0/0</span>
-            <span>تقدم المرحلة</span>
-          </div>
-          <a class="btn" href="phase-2.html">افتح المرحلة</a>
-        </article>
-        <article class="card" data-phase="phase-3">
-          <h3>المرحلة الثالثة: Backend + Database</h3>
-          <p>تبني APIs حقيقية وتوصل Flutter بسيرفر احترافي.</p>
-          <div class="progress"><span></span></div>
-          <div class="progress-meta">
-            <span class="progress-label">0/0</span>
-            <span>تقدم المرحلة</span>
-          </div>
-          <a class="btn" href="phase-3.html">افتح المرحلة</a>
-        </article>
-        <article class="card">
-          <h3>المرحلة الرابعة: UI/UX + Career</h3>
-          <p>تصميم احترافي + Portfolio + دخول سوق العمل بثقة.</p>
-          <div class="notice">بدون أيام محددة — خطوات عملية</div>
-          <a class="btn" href="phase-4.html">افتح المرحلة</a>
-        </article>
+      <div class="filter-group">
+        <button class="filter active" data-filter="all" type="button">الكل</button>
+        <button class="filter" data-filter="done" type="button">منجز</button>
+        <button class="filter" data-filter="todo" type="button">غير منجز</button>
       </div>
     </section>
 
-    <section class="section reveal">
-      <div class="section-title">
-        <h2>مصادر وتذكيرات سريعة</h2>
-      </div>
-      <div class="grid">
-        <div class="card">
-          <h3>أفضل مصادر مجانية</h3>
-          <p>Dart 8 Hours للبداية. FreeCodeCamp 37 Hours للتعمق. مع تمارين HackerRank و LeetCode (Easy).</p>
-        </div>
-        <div class="card">
-          <h3>أخطاء قاتلة</h3>
-          <p>حفظ Widgets، نسخ كود، تجاهل State Management. الحل: افهم ليه كل Widget موجود.</p>
-        </div>
-        <div class="card">
-          <h3>مشاريع لازم تعملها</h3>
-          <p>Todo App، Notes App، E-commerce UI، Login System، Chat App، E-commerce Backend.</p>
-        </div>
-        <div class="card">
-          <h3>استخدام AI بذكاء</h3>
-          <p>استعمله في تحسين UI، شرح Widgets، Debug، وكتابة APIs، بس انت اللي تفهم وتنفذ.</p>
-        </div>
-      </div>
-    </section>
-
-    <p class="footer">كل مرحلة هنا خطوة عملية ناحية الاحتراف. خلي التنفيذ هو هدفك اليومي.</p>
+    <div id="roadmap"></div>
   </main>
 
-  <div class="save-toast" id="saveToast">تم حفظ التقدم</div>
-  <script src="app.js"></script>
+  <footer class="footer">
+    <div>
+      <strong>جاهز تبدأ؟</strong> ركز على التنفيذ، وخلّي كل يوم خطوة حقيقية.
+    </div>
+    <a href="#top">العودة للأعلى</a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
