@@ -1,0 +1,470 @@
+﻿<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>المرحلة الثانية — Flutter بالتفصيل العميق</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-theme="dark">
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-badge">RD</div>
+        خارطة الطريق لتعلم Flutter & Dart
+      </div>
+      <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="phase-1.html">المرحلة الأولى</a>
+        <a href="phase-2.html" aria-current="page">المرحلة الثانية</a>
+        <a href="phase-3.html">المرحلة الثالثة</a>
+        <a href="phase-4.html">المرحلة الرابعة</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn" id="themeToggle">الوضع الفاتح</button>
+        <button class="btn secondary" id="resetProgress">تصفير التقدم</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero reveal">
+      <div class="hero-card" data-phase="phase-2">
+        <div class="pill">المرحلة الثانية</div>
+        <h1>Flutter بالتفصيل العميق</h1>
+        <p>الهدف: تبني UI احترافي، تفهم Widgets بعمق، وتقدر تعمل Apps حقيقية بتفاعل كامل.</p>
+        <div class="progress"><span></span></div>
+        <div class="progress-meta">
+          <span class="progress-label">0/0</span>
+          <span>تقدم المرحلة</span>
+        </div>
+        <div class="overall-progress">
+          <div class="progress"><span id="overallBar"></span></div>
+          <div class="progress-meta">
+            <span id="overallPercent">0%</span>
+            <span>نسبة الإنجاز الكلية</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>مدة المرحلة</h3>
+        <p>من 4 إلى 6 أسابيع حسب التزامك.</p>
+        <div class="notice">Flutter = Widgets × Widgets × Widgets. كل حاجة هنا Widget.</div>
+        <div class="week-nav" style="margin-top: 16px;">
+          <a href="#week-1">الأسبوع الأول</a>
+          <a href="#week-2">الأسبوع الثاني</a>
+          <a href="#week-3">الأسبوع الثالث</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="week-1">
+      <div class="section-title">
+        <h2>الأسبوع الأول: الأساس الحقيقي (UI Core)</h2>
+        <span class="pill">7 أيام</span>
+      </div>
+      <div class="days">
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d1" />
+            <span class="day-title">اليوم 1: أول App + Structure</span>
+            <span class="day-meta">Setup</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>تثبيت Flutter وإنشاء مشروع جديد.</li>
+                <li>تشغيل التطبيق لأول مرة.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تفهم</h4>
+              <ul>
+                <li>runApp() نقطة البداية.</li>
+                <li>الفرق بين MyApp وواجهة التطبيق.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d2" />
+            <span class="day-title">اليوم 2: Scaffold</span>
+            <span class="day-meta">هيكل الشاشة</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>AppBar + Body + FloatingActionButton.</li>
+                <li>تركيب شاشة كاملة.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d3" />
+            <span class="day-title">اليوم 3: Layout (Row / Column)</span>
+            <span class="day-meta">تنظيم العناصر</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>Column و Row وترتيب العناصر.</li>
+                <li>محاذاة ومحاور.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>UI فيه صورة + نص + زرار.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d4" />
+            <span class="day-title">اليوم 4: Spacing & Design</span>
+            <span class="day-meta">Padding / Margin</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>Padding و Margin و SizedBox.</li>
+                <li>توازن المسافات في UI.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d5" />
+            <span class="day-title">اليوم 5: Buttons + Interaction</span>
+            <span class="day-meta">تفاعل</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>ElevatedButton و onPressed.</li>
+                <li>ربط الزرار بأكشن.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d6" />
+            <span class="day-title">اليوم 6: Stateless vs Stateful</span>
+            <span class="day-meta">فرق أساسي</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تفهم</h4>
+              <ul>
+                <li>Stateless ثابتة.</li>
+                <li>Stateful بيتغير مع الوقت.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>زرار يزيد رقم (Counter بسيط).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d7" />
+            <span class="day-title">اليوم 7: Mini Project</span>
+            <span class="day-meta">Profile UI</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>مشروع اليوم</h4>
+              <ul>
+                <li>صورة + اسم + وصف + زرار.</li>
+                <li>تنسيق محترف ومسافات مريحة.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="week-2">
+      <div class="section-title">
+        <h2>الأسبوع الثاني: Navigation + Forms</h2>
+        <span class="pill">7 أيام</span>
+      </div>
+      <div class="days">
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d8" />
+            <span class="day-title">اليوم 8: Navigation</span>
+            <span class="day-meta">التنقل بين الصفحات</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>Navigator.push و pop.</li>
+                <li>إنشاء أكثر من شاشة.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d9" />
+            <span class="day-title">اليوم 9: Forms + Input</span>
+            <span class="day-meta">Login UI</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>TextField و TextEditingController.</li>
+                <li>بناء شاشة Login بسيطة.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d10" />
+            <span class="day-title">اليوم 10: Validation</span>
+            <span class="day-meta">تحقق البيانات</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>Form + validator.</li>
+                <li>رسائل خطأ واضحة للمستخدم.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d11" />
+            <span class="day-title">اليوم 11: ListView</span>
+            <span class="day-meta">قوائم</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>ListView.builder.</li>
+                <li>قائمة منتجات أو عناصر.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d12" />
+            <span class="day-title">اليوم 12: Images + Assets</span>
+            <span class="day-meta">صور داخل التطبيق</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>إضافة صور Assets.</li>
+                <li>Image.network للصور الخارجية.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d13" />
+            <span class="day-title">اليوم 13: HTTP (API)</span>
+            <span class="day-meta">جلب البيانات</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>http.get واستقبال البيانات.</li>
+                <li>عرض النتائج في UI.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d14" />
+            <span class="day-title">اليوم 14: Project</span>
+            <span class="day-meta">Todo App</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>مشروع اليوم</h4>
+              <ul>
+                <li>واجهة نظيفة + إضافة مهام.</li>
+                <li>إظهار المهام المكتملة.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="week-3">
+      <div class="section-title">
+        <h2>الأسبوع الثالث: الاحتراف الحقيقي</h2>
+        <span class="pill">7 أيام</span>
+      </div>
+      <div class="days">
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d15" />
+            <span class="day-title">اليوم 15: State Management (Provider)</span>
+            <span class="day-meta">إدارة الحالة</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>Provider و ChangeNotifier.</li>
+                <li>ربط البيانات بالواجهة بشكل نظيف.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d16" />
+            <span class="day-title">اليوم 16: Clean Code</span>
+            <span class="day-meta">تنظيم المشروع</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>تقسيم الملفات والمجلدات.</li>
+                <li>Naming واضح وسهل.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d17" />
+            <span class="day-title">اليوم 17: Reusable Widgets</span>
+            <span class="day-meta">إعادة الاستخدام</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>كوّن Widget خاص بالـ Button.</li>
+                <li>كوّن Card قابلة لإعادة الاستخدام.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d18" />
+            <span class="day-title">اليوم 18: Animations</span>
+            <span class="day-meta">بداية الحركة</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>AnimatedContainer و AnimatedOpacity.</li>
+                <li>تأثيرات بسيطة على UI.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d19" />
+            <span class="day-title">اليوم 19: Theming</span>
+            <span class="day-meta">Dark / Light</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>ThemeData و ColorScheme.</li>
+                <li>تبديل بين الوضع الداكن والفاتح.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d20" />
+            <span class="day-title">اليوم 20: Project Setup</span>
+            <span class="day-meta">Notes App + Firebase</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>مشروع اليوم</h4>
+              <ul>
+                <li>إنشاء مشروع Notes.</li>
+                <li>تصميم UI أساسي للـ Notes.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p2d21" />
+            <span class="day-title">اليوم 21: Project Finish</span>
+            <span class="day-meta">Notes App + Firebase</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>مشروع اليوم</h4>
+              <ul>
+                <li>إضافة CRUD للـ Notes.</li>
+                <li>تحسين الواجهة وربط Firebase.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <p class="footer">بعد المرحلة دي هتقدر تبني أي UI وتربطه بـ API بثقة.</p>
+  </main>
+
+  <div class="save-toast" id="saveToast">تم حفظ التقدم</div>
+  <script src="app.js"></script>
+</body>
+</html>

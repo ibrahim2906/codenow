@@ -1,0 +1,731 @@
+﻿<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>المرحلة الأولى — Dart + Programming Logic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-theme="dark">
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-badge">RD</div>
+        خارطة الطريق لتعلم Flutter & Dart
+      </div>
+      <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="phase-1.html" aria-current="page">المرحلة الأولى</a>
+        <a href="phase-2.html">المرحلة الثانية</a>
+        <a href="phase-3.html">المرحلة الثالثة</a>
+        <a href="phase-4.html">المرحلة الرابعة</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn" id="themeToggle">الوضع الفاتح</button>
+        <button class="btn secondary" id="resetProgress">تصفير التقدم</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero reveal">
+      <div class="hero-card" data-phase="phase-1">
+        <div class="pill">المرحلة الأولى</div>
+        <h1>Dart + Programming Logic</h1>
+        <p>الهدف: تفهم البرمجة بعمق وتكتب الكود بإيدك، مش تحفظه. دي المرحلة اللي بتثبت الأساس.</p>
+        <div class="progress"><span></span></div>
+        <div class="progress-meta">
+          <span class="progress-label">0/0</span>
+          <span>تقدم المرحلة</span>
+        </div>
+        <div class="overall-progress">
+          <div class="progress"><span id="overallBar"></span></div>
+          <div class="progress-meta">
+            <span id="overallPercent">0%</span>
+            <span>نسبة الإنجاز الكلية</span>
+          </div>
+        </div>
+        <div style="margin-top: 16px;">
+          <a class="btn accent" href="https://www.youtube.com/watch?v=Fqcsow_7go4" target="_blank" rel="noopener">مشاهدة كورس Dart الكامل</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>مدة المرحلة</h3>
+        <p>من 2 إلى 3 أسابيع حسب التزامك.</p>
+        <div class="notice">بعد المرحلة دي هتفهم أي كود Dart وتكتب برامج لوحدك.</div>
+        <div class="week-nav" style="margin-top: 16px;">
+          <a href="#week-1">الأسبوع الأول</a>
+          <a href="#week-2">الأسبوع الثاني</a>
+          <a href="#week-3">الأسبوع الثالث</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="week-1">
+      <div class="section-title">
+        <h2>الأسبوع الأول: الأساسيات القوية جدًا</h2>
+        <span class="pill">7 أيام</span>
+      </div>
+      <div class="days">
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d1" />
+            <span class="day-title">اليوم 1: يعني إيه برمجة + أول كود</span>
+            <span class="day-meta">أساس التفكير</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>يعني إيه Programming و Algorithm.</li>
+                <li>إزاي الكود بيتنفذ خطوة خطوة.</li>
+                <li>أول كود Dart وتشغيله.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تفهم</h4>
+              <ul>
+                <li>main() = نقطة بداية البرنامج.</li>
+                <li>print() = إخراج النصوص.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>غيّر الجملة 10 مرات: اسمك، جمل مختلفة، أرقام.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(00:00:00) Introduction</li>
+                <li>(00:01:16) What is Dart?</li>
+                <li>(00:02:52) Dart SDK</li>
+                <li>(00:05:57) Print Statement</li>
+                <li>(00:13:39) Comments</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d2" />
+            <span class="day-title">اليوم 2: Variables (أهم أساس)</span>
+            <span class="day-meta">أنواع البيانات</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>int, double, String, bool.</li>
+                <li>إزاي تخزن بيانات مختلفة.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تفهم</h4>
+              <ul>
+                <li>الفرق بين الأنواع وليه كل نوع مهم.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>برنامج يحفظ بياناتك ويطبعها.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(00:16:31) Variables</li>
+                <li>(00:48:08) var, const and final Variables</li>
+                <li>(00:54:10) final vs const variables</li>
+                <li>(00:58:25) Optional Variables/ Nullable Variables</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d3" />
+            <span class="day-title">اليوم 3: Operators</span>
+            <span class="day-meta">عمليات حسابية</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>+ - * / %.</li>
+                <li>أولوية العمليات الحسابية.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>اعمل آلة حاسبة بسيطة.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(00:08:59) Operators</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d4" />
+            <span class="day-title">اليوم 4: If / Else</span>
+            <span class="day-meta">اتخاذ القرار</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>كتابة شروط if / else.</li>
+                <li>المقارنات الأساسية.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>برنامج يحدد ناجح أو راسب.</li>
+                <li>برنامج يحدد موجب أو سالب.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(01:10:35) If Condition</li>
+                <li>(01:28:42) Ternary Operators</li>
+                <li>(01:31:02) Switch Statement</li>
+                <li>(01:36:52) Exercise 1</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d5" />
+            <span class="day-title">اليوم 5: Loops</span>
+            <span class="day-meta">نقطة قوة</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>for loop وكيف يعمل.</li>
+                <li>مفهوم البداية والشرط والتكرار.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب قوي</h4>
+              <ul>
+                <li>اطبع من 1 لـ 100.</li>
+                <li>اطبع الأعداد الزوجية.</li>
+                <li>اطبع جدول الضرب.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(01:45:06) For Loop</li>
+                <li>(01:58:30) While Loop</li>
+                <li>(02:01:39) Do While Loop</li>
+                <li>(02:05:12) continue keyword</li>
+                <li>(02:08:11) Exercise 2</li>
+                <li>(02:08:30) break keyword</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d6" />
+            <span class="day-title">اليوم 6: Functions</span>
+            <span class="day-meta">تنظيم الكود</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>تعريف واستخدام الدوال.</li>
+                <li>إعادة استخدام الكود.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>Function تجمع رقمين.</li>
+                <li>Function تحدد أكبر رقم.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(02:09:49) Functions</li>
+                <li>(02:18:49) Returning 2 Values from a Function (Records)</li>
+                <li>(02:21:56) Patterns</li>
+                <li>(02:23:45) Returning Nullable Variables/Values</li>
+                <li>(02:25:48) Function Positional Arguments & Global Variables</li>
+                <li>(02:33:43) Function Named Arguments</li>
+                <li>(02:40:40) Named Records</li>
+                <li>(02:43:03) Returning Functions from Functions</li>
+                <li>(02:44:59) Arrow Function</li>
+                <li>(02:45:48) Anonymous Functions</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d7" />
+            <span class="day-title">اليوم 7: مراجعة + Mini Project</span>
+            <span class="day-meta">Calculator</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>مشروع اليوم</h4>
+              <ul>
+                <li>برنامج يدخل رقمين.</li>
+                <li>ينفذ جمع/طرح/ضرب/قسمة.</li>
+                <li>تأكد من صحة المخرجات.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>مراجعة كل اللي فات في الأسبوع + تطبيق عملي.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="week-2">
+      <div class="section-title">
+        <h2>الأسبوع الثاني: التفكير الحقيقي</h2>
+        <span class="pill">7 أيام</span>
+      </div>
+      <div class="days">
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d8" />
+            <span class="day-title">اليوم 8: Lists</span>
+            <span class="day-meta">تنظيم البيانات</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>إنشاء List وإضافة عناصر.</li>
+                <li>الحذف والبحث عن عنصر.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>أنشئ قائمة أرقام وعدل عليها.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(04:39:48) Lists</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d9" />
+            <span class="day-title">اليوم 9: Maps</span>
+            <span class="day-meta">Key / Value</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>تعريف Map وتخزين بيانات طالب.</li>
+                <li>الوصول للقيم بالمفاتيح.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>اعمل Map فيها name و age و grade.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(05:22:04) Sets</li>
+                <li>(05:24:39) Maps</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d10" />
+            <span class="day-title">اليوم 10: Loops متقدم</span>
+            <span class="day-meta">Nested Loops</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>Nested loops واستخدامها في الأنماط.</li>
+                <li>حل مسائل أصعب شوية.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>اطبع أشكال بسيطة بالنجوم.</li>
+                <li>جرب جدول ضرب متعدد.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(01:45:06) For Loop</li>
+                <li>(01:58:30) While Loop</li>
+                <li>(02:01:39) Do While Loop</li>
+                <li>(02:05:12) continue keyword</li>
+                <li>(02:08:30) break keyword</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d11" />
+            <span class="day-title">اليوم 11: Strings</span>
+            <span class="day-meta">نصوص</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>دمج النصوص (concatenation).</li>
+                <li>عمليات على النصوص (length, contains).</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>برنامج يبني جملة من بيانات مختلفة.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(00:16:31) Variables</li>
+                <li>(00:48:08) var, const and final Variables</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d12" />
+            <span class="day-title">اليوم 12: Null Safety</span>
+            <span class="day-meta">أهم نقطة في Dart</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>الفرق بين nullable و non-nullable.</li>
+                <li>استخدام ? و ! بشكل صحيح.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>جرب متغيرات nullable وجرب التعامل معها بأمان.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(00:58:25) Optional Variables/ Nullable Variables</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d13" />
+            <span class="day-title">اليوم 13: Error Handling</span>
+            <span class="day-meta">Try / Catch</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>try / catch / finally.</li>
+                <li>إزاي تمنع البرنامج من الكراش.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>جرب قسمة على صفر وتعامل مع الخطأ.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(06:02:03) Exception Handling</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d14" />
+            <span class="day-title">اليوم 14: Project أقوى</span>
+            <span class="day-meta">Student Manager</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>مشروع اليوم</h4>
+              <ul>
+                <li>إضافة طالب جديد.</li>
+                <li>عرض قائمة الطلاب.</li>
+                <li>بحث وحذف بسيط.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>تطبيق عملي على كل مفاهيم الأسبوع.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="week-3">
+      <div class="section-title">
+        <h2>الأسبوع الثالث: الاحتراف</h2>
+        <span class="pill">7 أيام</span>
+      </div>
+      <div class="days">
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d15" />
+            <span class="day-title">اليوم 15: OOP مقدمة</span>
+            <span class="day-meta">Classes</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>Class + Properties.</li>
+                <li>ليه OOP مهمة في المشاريع.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(02:45:53) Classes</li>
+                <li>(03:06:02) Constructor</li>
+                <li>(03:10:53) this keyword</li>
+                <li>(03:11:38) Positional Constructor Arguments</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d16" />
+            <span class="day-title">اليوم 16: Constructors + this</span>
+            <span class="day-meta">تهيئة الكائنات</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>إنشاء Constructor.</li>
+                <li>استخدام this لربط المتغيرات.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(03:17:43) Immutable Classes</li>
+                <li>(03:20:19) Named Constructor Arguments</li>
+                <li>(03:21:18) Classes Terminology</li>
+                <li>(03:22:29) Private Variables</li>
+                <li>(03:26:46) Getters</li>
+                <li>(03:30:30) Setters</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d17" />
+            <span class="day-title">اليوم 17: OOP Practice</span>
+            <span class="day-meta">Car مثال عملي</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>Class Car فيها name و speed.</li>
+                <li>Method يزيد السرعة ويطبع النتيجة.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(03:32:26) Static Variables</li>
+                <li>(03:37:26) Static Functions</li>
+                <li>(03:38:09) When to use static keyword?</li>
+                <li>(03:40:10) Inheritance</li>
+                <li>(03:58:58) implements keyword</li>
+                <li>(04:09:13) Abstract Classes</li>
+                <li>(04:14:03) Object Oriented Programming (OOP) in Dart</li>
+                <li>(04:16:09) Polymorphism</li>
+                <li>(04:19:52) Abstraction</li>
+                <li>(04:22:12) Encapsulation</li>
+                <li>(04:24:11) OOP Brief</li>
+                <li>(04:25:14) Mixins</li>
+                <li>(04:32:40) Class Modifiers</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d18" />
+            <span class="day-title">اليوم 18: Async / Await</span>
+            <span class="day-meta">الأساس</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>يعني إيه Future.</li>
+                <li>إزاي تستخدم async/await.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>اعمل تأخير وهمي وطباعة بعدها.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(06:10:45) Futures (Promises)</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d19" />
+            <span class="day-title">اليوم 19: Future Practice</span>
+            <span class="day-meta">تطبيق عملي</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>قراءة بيانات (fake) بعد await.</li>
+                <li>تعامل مع أكثر من Future.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(06:55:08) Streams</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d20" />
+            <span class="day-title">اليوم 20: مراجعة + تحضير المشروع</span>
+            <span class="day-meta">Planning</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>خطوات</h4>
+              <ul>
+                <li>راجع أهم المفاهيم.</li>
+                <li>قسم المشروع لمهام صغيرة.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(07:18:46) Bonus: Creating Records</li>
+                <li>(07:22:57) Bonus: Patterns & Pattern Matching</li>
+                <li>(07:35:11) Extensions</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p1d21" />
+            <span class="day-title">اليوم 21: المشروع النهائي</span>
+            <span class="day-meta">تطبيق كامل</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تنفيذ</h4>
+              <ul>
+                <li>طبق كل المفاهيم في مشروع واحد.</li>
+                <li>وثّق اللي اتعلمته في نقاط قصيرة.</li>
+              </ul>
+            </div>
+            <div class="day-block">
+              <h4>تايم لاين الكورس</h4>
+              <ul>
+                <li>(07:41:25) Conclusion</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <p class="footer">خلص المرحلة دي كويس، وهتدخل Flutter وانت قوي جدًا.</p>
+  </main>
+
+  <div class="save-toast" id="saveToast">تم حفظ التقدم</div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+﻿<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>خارطة الطريق — Flutter + Dart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-theme="dark">
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-badge">RD</div>
+        خارطة الطريق لتعلم Flutter & Dart
+      </div>
+      <div class="nav-links">
+        <a href="index.html" aria-current="page">الرئيسية</a>
+        <a href="phase-1.html">المرحلة الأولى</a>
+        <a href="phase-2.html">المرحلة الثانية</a>
+        <a href="phase-3.html">المرحلة الثالثة</a>
+        <a href="phase-4.html">المرحلة الرابعة</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn" id="themeToggle">الوضع الفاتح</button>
+        <button class="btn secondary" id="resetProgress">تصفير التقدم</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero reveal">
+      <div class="hero-card">
+        <div class="pill">خطة من 0 للاحتراف</div>
+        <h1>امشي يوم بيوم… وهتوصل لمستوى الشركات</h1>
+        <p>الخريطة دي مصممة عشان تخليك تفهم البرمجة بعمق، تبني UI محترف، وتقدر تدخل سوق العمل بثقة. افتح كل مرحلة لوحدها وركز يومًا بيوم.</p>
+        <div class="stats">
+          <div class="stat">
+            <strong id="overallCount">0/0</strong>
+            إجمالي الأيام المكتملة
+          </div>
+          <div class="stat">
+            <strong>4 مراحل</strong>
+            من الصفر للاحتراف
+          </div>
+          <div class="stat">
+            <strong>9 شهور</strong>
+            زمن الوصول للوظيفة
+          </div>
+        </div>
+        <div class="overall-progress">
+          <div class="progress"><span id="overallBar"></span></div>
+          <div class="progress-meta">
+            <span id="overallPercent">0%</span>
+            <span>نسبة الإنجاز الكلية</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>النظام اليومي (مهم جدًا)</h3>
+        <p>التزم بالمعادلة دي يوميًا عشان تثبت المعلومة وتطبقها عمليًا.</p>
+        <div class="days" style="margin-top: 16px;">
+          <div class="notice">⏱️ 2–3 ساعات مشاهدة مركزة</div>
+          <div class="notice">⏱️ 3–4 ساعات تطبيق عملي</div>
+          <div class="notice">⏱️ 30 دقيقة مراجعة سريعة</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-title">
+        <h2>المراحل الأربع</h2>
+        <span class="pill">تابع تقدمك من هنا</span>
+      </div>
+      <div class="grid">
+        <article class="card" data-phase="phase-1">
+          <h3>المرحلة الأولى: Dart + Logic</h3>
+          <p>تفهم البرمجة من الصفر وتبني أساس قوي في التفكير البرمجي.</p>
+          <div class="progress"><span></span></div>
+          <div class="progress-meta">
+            <span class="progress-label">0/0</span>
+            <span>تقدم المرحلة</span>
+          </div>
+          <a class="btn" href="phase-1.html">افتح المرحلة</a>
+        </article>
+        <article class="card" data-phase="phase-2">
+          <h3>المرحلة الثانية: Flutter UI</h3>
+          <p>تتعلم بناء واجهات احترافية وربطها بتفاعل حقيقي.</p>
+          <div class="progress"><span></span></div>
+          <div class="progress-meta">
+            <span class="progress-label">0/0</span>
+            <span>تقدم المرحلة</span>
+          </div>
+          <a class="btn" href="phase-2.html">افتح المرحلة</a>
+        </article>
+        <article class="card" data-phase="phase-3">
+          <h3>المرحلة الثالثة: Backend + Database</h3>
+          <p>تبني APIs حقيقية وتوصل Flutter بسيرفر احترافي.</p>
+          <div class="progress"><span></span></div>
+          <div class="progress-meta">
+            <span class="progress-label">0/0</span>
+            <span>تقدم المرحلة</span>
+          </div>
+          <a class="btn" href="phase-3.html">افتح المرحلة</a>
+        </article>
+        <article class="card">
+          <h3>المرحلة الرابعة: UI/UX + Career</h3>
+          <p>تصميم احترافي + Portfolio + دخول سوق العمل بثقة.</p>
+          <div class="notice">بدون أيام محددة — خطوات عملية</div>
+          <a class="btn" href="phase-4.html">افتح المرحلة</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-title">
+        <h2>مصادر وتذكيرات سريعة</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>أفضل مصادر مجانية</h3>
+          <p>Dart 8 Hours للبداية. FreeCodeCamp 37 Hours للتعمق. مع تمارين HackerRank و LeetCode (Easy).</p>
+        </div>
+        <div class="card">
+          <h3>أخطاء قاتلة</h3>
+          <p>حفظ Widgets، نسخ كود، تجاهل State Management. الحل: افهم ليه كل Widget موجود.</p>
+        </div>
+        <div class="card">
+          <h3>مشاريع لازم تعملها</h3>
+          <p>Todo App، Notes App، E-commerce UI، Login System، Chat App، E-commerce Backend.</p>
+        </div>
+        <div class="card">
+          <h3>استخدام AI بذكاء</h3>
+          <p>استعمله في تحسين UI، شرح Widgets، Debug، وكتابة APIs، بس انت اللي تفهم وتنفذ.</p>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer">كل مرحلة هنا خطوة عملية ناحية الاحتراف. خلي التنفيذ هو هدفك اليومي.</p>
+  </main>
+
+  <div class="save-toast" id="saveToast">تم حفظ التقدم</div>
+  <script src="app.js"></script>
+</body>
+</html>

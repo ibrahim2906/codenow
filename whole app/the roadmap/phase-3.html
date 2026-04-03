@@ -1,0 +1,450 @@
+﻿<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>المرحلة الثالثة — Backend + Database</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-theme="dark">
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-badge">RD</div>
+        خارطة الطريق لتعلم Flutter & Dart
+      </div>
+      <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="phase-1.html">المرحلة الأولى</a>
+        <a href="phase-2.html">المرحلة الثانية</a>
+        <a href="phase-3.html" aria-current="page">المرحلة الثالثة</a>
+        <a href="phase-4.html">المرحلة الرابعة</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn" id="themeToggle">الوضع الفاتح</button>
+        <button class="btn secondary" id="resetProgress">تصفير التقدم</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero reveal">
+      <div class="hero-card" data-phase="phase-3">
+        <div class="pill">المرحلة الثالثة</div>
+        <h1>Backend + Database (باحتراف)</h1>
+        <p>الهدف: تفهم حركة البيانات، تبني APIs، وتوصل Flutter بسيرفر حقيقي.</p>
+        <div class="progress"><span></span></div>
+        <div class="progress-meta">
+          <span class="progress-label">0/0</span>
+          <span>تقدم المرحلة</span>
+        </div>
+        <div class="overall-progress">
+          <div class="progress"><span id="overallBar"></span></div>
+          <div class="progress-meta">
+            <span id="overallPercent">0%</span>
+            <span>نسبة الإنجاز الكلية</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>فكرة المرحلة</h3>
+        <p>أي تطبيق كبير = Flutter + Backend + Database. هنا هتفهم الثلاثة مع بعض.</p>
+        <div class="notice">ابدأ بـ Firebase، بعدين Supabase، وبعدها Node.js للاحتراف.</div>
+        <div class="week-nav" style="margin-top: 16px;">
+          <a href="#week-1">الأسبوع الأول</a>
+          <a href="#week-2">الأسبوع الثاني</a>
+          <a href="#week-3">الأسبوع الثالث</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="week-1">
+      <div class="section-title">
+        <h2>الأسبوع الأول: Firebase Basics</h2>
+        <span class="pill">7 أيام</span>
+      </div>
+      <div class="days">
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d1" />
+            <span class="day-title">اليوم 1: Firebase Setup</span>
+            <span class="day-meta">تهيئة المشروع</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>إنشاء مشروع Firebase.</li>
+                <li>ربطه بتطبيق Flutter.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d2" />
+            <span class="day-title">اليوم 2: Authentication</span>
+            <span class="day-meta">Login / Register</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>Email/Password تسجيل ودخول.</li>
+                <li>إدارة المستخدمين الأساسية.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d3" />
+            <span class="day-title">اليوم 3: Firestore</span>
+            <span class="day-meta">Database NoSQL</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>Collections و Documents.</li>
+                <li>تخزين بيانات المستخدمين.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d4" />
+            <span class="day-title">اليوم 4: CRUD Operations</span>
+            <span class="day-meta">Create / Read / Update / Delete</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>أضف بيانات، اقرأها، عدلها، واحذفها.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d5" />
+            <span class="day-title">اليوم 5: Storage</span>
+            <span class="day-meta">رفع الصور</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>رفع صور المستخدمين.</li>
+                <li>تخزين الروابط في Firestore.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d6" />
+            <span class="day-title">اليوم 6: Security Rules</span>
+            <span class="day-meta">حماية البيانات</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>قواعد الوصول للبيانات.</li>
+                <li>تأمين البيانات حسب المستخدم.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d7" />
+            <span class="day-title">اليوم 7: Project</span>
+            <span class="day-meta">Login + Profile App</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>مشروع اليوم</h4>
+              <ul>
+                <li>تسجيل + دخول.</li>
+                <li>صفحة Profile تربط البيانات والصورة.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="week-2">
+      <div class="section-title">
+        <h2>الأسبوع الثاني: API + Networking</h2>
+        <span class="pill">7 أيام</span>
+      </div>
+      <div class="days">
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d8" />
+            <span class="day-title">اليوم 8: REST API</span>
+            <span class="day-meta">GET / POST / PUT / DELETE</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>مفهوم الـ endpoints.</li>
+                <li>معنى كل HTTP Method.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d9" />
+            <span class="day-title">اليوم 9: JSON</span>
+            <span class="day-meta">تنسيق البيانات</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>قراءة وكتابة JSON.</li>
+                <li>تحويل JSON لكائنات.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d10" />
+            <span class="day-title">اليوم 10: ربط Flutter بـ API</span>
+            <span class="day-meta">Integration</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تطبيق</h4>
+              <ul>
+                <li>جلب بيانات وعرضها في ListView.</li>
+                <li>تعامل مع loading و error.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d11" />
+            <span class="day-title">اليوم 11: Error Handling</span>
+            <span class="day-meta">HTTP Errors</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>التعامل مع Status Codes.</li>
+                <li>رسائل خطأ واضحة للمستخدم.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d12" />
+            <span class="day-title">اليوم 12: Authentication Token</span>
+            <span class="day-meta">JWT</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>إزاي JWT بيشتغل.</li>
+                <li>إرسال التوكن في الطلبات.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d13" />
+            <span class="day-title">اليوم 13: Project Start</span>
+            <span class="day-meta">App يسحب بيانات من API</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>مشروع اليوم</h4>
+              <ul>
+                <li>تصميم شاشة عرض البيانات.</li>
+                <li>كتابة Service للـ API.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d14" />
+            <span class="day-title">اليوم 14: Project Finish</span>
+            <span class="day-meta">App يسحب بيانات من API</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>مشروع اليوم</h4>
+              <ul>
+                <li>تحسين UX (loading, error).</li>
+                <li>تجربة سيناريوهات مختلفة.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="week-3">
+      <div class="section-title">
+        <h2>الأسبوع الثالث: Backend حقيقي (Node.js)</h2>
+        <span class="pill">7 أيام</span>
+      </div>
+      <div class="days">
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d15" />
+            <span class="day-title">اليوم 15: مقدمة Node.js</span>
+            <span class="day-meta">Runtime</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>يعني إيه Node.js وليه مهم.</li>
+                <li>تشغيل أول سكربت بسيط.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d16" />
+            <span class="day-title">اليوم 16: Express</span>
+            <span class="day-meta">أول Route</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>إنشاء سيرفر Express.</li>
+                <li>أول endpoint /users.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d17" />
+            <span class="day-title">اليوم 17: إنشاء API</span>
+            <span class="day-meta">CRUD</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>بناء endpoints أساسية.</li>
+                <li>تجربتها باستخدام Postman.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d18" />
+            <span class="day-title">اليوم 18: Database (MongoDB)</span>
+            <span class="day-meta">ربط البيانات</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تتعلم</h4>
+              <ul>
+                <li>إنشاء قاعدة بيانات.</li>
+                <li>ربطها بالـ API.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d19" />
+            <span class="day-title">اليوم 19: Authentication</span>
+            <span class="day-meta">Login System</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>تدريب</h4>
+              <ul>
+                <li>تسجيل مستخدم وتوليد توكن.</li>
+                <li>حماية Routes بالتوكن.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d20" />
+            <span class="day-title">اليوم 20: Project Start</span>
+            <span class="day-meta">Backend كامل لتطبيق</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>مشروع اليوم</h4>
+              <ul>
+                <li>تحديد Entities و API Routes.</li>
+                <li>بناء الهيكل الأساسي للسيرفر.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <label class="day-header">
+            <input type="checkbox" data-key="p3d21" />
+            <span class="day-title">اليوم 21: Project Finish</span>
+            <span class="day-meta">Backend كامل لتطبيق</span>
+          </label>
+          <div class="day-body">
+            <div class="day-block">
+              <h4>مشروع اليوم</h4>
+              <ul>
+                <li>إكمال CRUD + Auth.</li>
+                <li>اختبار الأداء والأخطاء.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <p class="footer">بعد المرحلة دي هتقدر تبني Backend كامل وتربط Flutter بقاعدة بيانات بثقة.</p>
+  </main>
+
+  <div class="save-toast" id="saveToast">تم حفظ التقدم</div>
+  <script src="app.js"></script>
+</body>
+</html>
