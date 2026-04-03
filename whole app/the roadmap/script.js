@@ -1533,37 +1533,33 @@ function renderBlock(block, dayId, blockIndex) {
   const variant = block.variant ? ` ${block.variant}` : "";
   let items = "";
   if (block.items && block.items.length) {
-    items = `
-      <ul class="task-list">
-        ${block.items
+    const isUnderstandSection = block.title && (block.title.includes("تفهم") || block.title.includes("مفاهيم"));
+
+    if (isUnderstandSection) {
+      items = `
+        <ul>
+          ${block.items.map(item => `<li>${escapeHTML(item)}</li>`).join("")}
+        </ul>
+      `;
+    } else {
+      items = `
+        <ul class="task-list">
+          ${block.items
           .map((item, itemIndex) => {
             const taskId = `${dayId}::${blockIndex}::${itemIndex}`;
             return `
-              <li>
-                <label class="task-item">
-                  <input type="checkbox" data-task="${taskId}" data-day="${dayId}" />
-                  <span>${escapeHTML(item)}</span>
-                </label>
-              </li>
-            `;
+                <li>
+                  <label class="task-item">
+                    <input type="checkbox" data-task="${taskId}" data-day="${dayId}" />
+                    <span>${escapeHTML(item)}</span>
+                  </label>
+                </li>
+              `;
           })
           .join("")}
-      </ul>
-    `;
-  }
-
-  if (!items && block.code) {
-    const taskId = `${dayId}::${blockIndex}::code`;
-    items = `
-      <ul class="task-list">
-        <li>
-          <label class="task-item">
-            <input type="checkbox" data-task="${taskId}" data-day="${dayId}" />
-            <span>نفّذ المثال وجربه عمليًا</span>
-          </label>
-        </li>
-      </ul>
-    `;
+        </ul>
+      `;
+    }
   }
   const code = block.code
     ? `<pre><code>${escapeHTML(block.code)}</code></pre>`
@@ -1610,10 +1606,10 @@ function renderDay(day, phaseId) {
   const timelineBlock =
     day.timeline && day.timeline.length
       ? {
-          title: "تايمستامب الفيديو",
-          items: day.timeline,
-          variant: "detail-block--timeline"
-        }
+        title: "تايمستامب الفيديو",
+        items: day.timeline,
+        variant: "detail-block--timeline"
+      }
       : null;
 
   return `
@@ -1626,18 +1622,18 @@ function renderDay(day, phaseId) {
       <div class="day-row">
         <div class="day-tags">
           ${tags
-            .map(tag => {
-              const extra =
-                tag === "تركيز"
-                  ? " pill--accent"
-                  : tag === "مشروع"
-                    ? " pill--project"
-                    : tag === "تسليم"
-                      ? " pill--deliver"
-                      : "";
-              return `<span class="pill pill--tiny${extra}">${escapeHTML(tag)}</span>`;
-            })
-            .join("")}
+      .map(tag => {
+        const extra =
+          tag === "تركيز"
+            ? " pill--accent"
+            : tag === "مشروع"
+              ? " pill--project"
+              : tag === "تسليم"
+                ? " pill--deliver"
+                : "";
+        return `<span class="pill pill--tiny${extra}">${escapeHTML(tag)}</span>`;
+      })
+      .join("")}
         </div>
       </div>
       <div class="day-body">
@@ -1646,9 +1642,8 @@ function renderDay(day, phaseId) {
         <details>
           <summary>${detailsLabel}</summary>
           <div class="details-body">
-            ${
-              timelineBlock
-                ? `
+            ${timelineBlock
+      ? `
                   <div class="details-grid">
                     <div class="details-main">
                       ${blocks.map((block, index) => renderBlock(block, day.id, index)).join("")}
@@ -1658,8 +1653,8 @@ function renderDay(day, phaseId) {
                     </div>
                   </div>
                 `
-                : `${blocks.map((block, index) => renderBlock(block, day.id, index)).join("")}`
-            }
+      : `${blocks.map((block, index) => renderBlock(block, day.id, index)).join("")}`
+    }
           </div>
         </details>
       </div>
@@ -1706,15 +1701,15 @@ function renderExtra(extra) {
       <div class="extra-card">
         <h4>${escapeHTML(extra.title)}</h4>
         ${extra.pairs
-          .map(
-            pair => `
+        .map(
+          pair => `
             <div class="extra-pair">
               <strong>${escapeHTML(pair.problem)}</strong>
               <div>${escapeHTML(pair.solution)}</div>
             </div>
           `
-          )
-          .join("")}
+        )
+        .join("")}
       </div>
     `;
   }
