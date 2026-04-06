@@ -210,13 +210,36 @@ function renderLessonContent(lesson, phase) {
 // ----- Utilities -----
 
 function highlightCode(code) {
-  return code
-    .replace(/\/\/.*/g, m => `<span class="cm">${m}</span>`)
-    .replace(/\b(void|class|var|int|double|String|bool|final|const|dynamic|if|else|switch|case|break|default|for|in|while|do|return|async|await|required|late)\b/g, '<span class="kw">$1</span>')
-    .replace(/"(.*?)"/g, '<span class="st">"$1"</span>')
-    .replace(/'(.*?)'/g, '<span class="st">\'$1\'</span>')
-    .replace(/\b(\d+)\b/g, '<span class="nm">$1</span>')
-    .replace(/([{}()\[\]])/g, '<span class="bl">$1</span>');
+  // This is a single-pass syntax highlighter to prevent the "overlapping regex" bug
+  // where one .replace() call accidentally modifies the HTML injected by a previous one.
+  const dartKeywords = 'void|class|var|int|double|String|bool|final|const|dynamic|if|else|switch|case|break|default|for|in|while|do|return|async|await|required|late|extends|super|implements|with|get|set|async\\*|yield|true|false|null';
+
+  // Regex to capture all tokens at once. Order matters: comments and strings first.
+  const regex = new RegExp(
+    `(\\/\\/.*)|` + // 1: Comment
+    `("(?:\\\\.|[^"\\\\])*"|'(?:\\\\.|[^'\\\\])*')|` + // 2: String (handles escaped quotes)
+    `(@[a-zA-Z_]+)|` + // 3: Annotation
+    `\\b(${dartKeywords})\\b|` + // 4: Keyword
+    `\\b(\\d+\\.?\\d*)\\b|` + // 5: Number (int or double)
+    `([{}()[\\];,])|` + // 6: Brackets and punctuation
+    `(<)|(>)|(&)`, // 7, 8, 9: HTML entities that need escaping
+    'g'
+  );
+
+  const escape = (str) => str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  return code.replace(regex, (match, comment, string, annotation, keyword, number, punctuation, lt, gt, amp) => {
+    if (comment) return `<span class="cm">${escape(comment)}</span>`;
+    if (string) return `<span class="st">${escape(string)}</span>`;
+    if (annotation) return `<span class="meta">${annotation}</span>`; // A new class for annotations like @override
+    if (keyword) return `<span class="kw">${keyword}</span>`;
+    if (number) return `<span class="nm">${number}</span>`;
+    if (punctuation) return `<span class="bl">${punctuation}</span>`;
+    if (lt) return '&lt;';
+    if (gt) return '&gt;';
+    if (amp) return '&amp;';
+    return match;
+  });
 }
 
 window.switchTab = (btn, index) => {
