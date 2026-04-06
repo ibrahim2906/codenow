@@ -219,11 +219,8 @@ function checkCompletionStatus() {
   const total = currentAnswers.totalNeeded;
   const done = currentAnswers.mcqs + currentAnswers.thinking + currentAnswers.coding;
 
-  // Requirement: answer all MCQs and write something for thinking/coding
-  // To make it beginner-friendly, we'll allow 80% completion to proceed
-  if (done >= total * 0.8) {
-    btn.disabled = false;
-  }
+  // Requirement relaxed: users don't have to solve all questions to proceed
+  btn.disabled = false;
 }
 
 function addXP(amount) {

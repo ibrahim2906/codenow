@@ -197,8 +197,8 @@ function renderLessonContent(lesson, phase) {
       <div id="quiz-container" class="quiz-section"></div>
       
       <div class="complete-btn-wrap">
-        <button id="complete-lesson-btn" class="complete-btn" disabled>Complete Lesson & Unlock Next</button>
-        <p class="quiz-progress-hint">Finish all practice questions to complete the lesson.</p>
+        <button id="complete-lesson-btn" class="complete-btn">Complete Lesson & Unlock Next</button>
+        <p class="quiz-progress-hint">Practice questions are optional. Click here to complete the lesson.</p>
       </div>
     </div>
   `;
